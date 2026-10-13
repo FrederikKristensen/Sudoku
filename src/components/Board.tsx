@@ -1,7 +1,17 @@
 import Cell from './Cell';
 
 const Board = () => {
-  const Grid: number[] = [5, 3, 2, 1, 6, 5, 0, 8, 9];
+  const Grid: number[] = Array.from({ length: 9 }, (_, index) => index + 1);
+
+  shuffle(Grid);
+
+  function shuffle(array: number[]) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const random = Math.floor(Math.random() * (i + 1));
+
+      [array[i], array[random]] = [array[random], array[i]];
+    }
+  }
 
   return (
     <div className="grid grid-cols-3">
