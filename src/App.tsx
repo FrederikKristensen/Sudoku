@@ -1,10 +1,11 @@
 import './App.css';
+import Cell from './components/Cell';
 
 function App() {
   return (
     <>
       <div className="grid grid-cols-3">
-        <div>1</div>
+        <Cell></Cell>
         <div>2</div>
         <div>3</div>
         <div>4</div>
