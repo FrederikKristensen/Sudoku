@@ -1,21 +1,12 @@
 import './App.css';
-import Cell from './components/Cell';
+import Board from './components/Board';
 
 function App() {
   return (
     <>
-      <div className="grid grid-cols-3">
-        <Cell></Cell>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-        <div>7</div>
-        <div>8</div>
-        <div>9</div>
-      </div>
+      <Board />
     </>
   );
 }
+
 export default App;

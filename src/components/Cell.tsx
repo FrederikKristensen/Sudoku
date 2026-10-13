@@ -1,7 +1,11 @@
 import { useState } from 'react';
 
-function Cell() {
-  const [value, setValue] = useState('');
+type CellProps = {
+  defaultValue: number;
+};
+
+const Cell = ({ defaultValue }: CellProps) => {
+  const [value, setValue] = useState(defaultValue === 0 ? '' : defaultValue);
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     setValue(event.currentTarget.value);
@@ -12,6 +16,6 @@ function Cell() {
       <input type="text" maxLength={1} value={value} onChange={handleChange} />
     </div>
   );
-}
+};
 
 export default Cell;
