@@ -1,19 +1,25 @@
-import { useState } from 'react';
-
 type CellProps = {
   defaultValue: number;
+  inputValue: string;
+  onChange: (value: string) => void;
 };
 
-const Cell = ({ defaultValue }: CellProps) => {
-  const [value, setValue] = useState(defaultValue === 0 ? '' : defaultValue);
+const Cell = ({ defaultValue, inputValue, onChange }: CellProps) => {
+  const isEditable = defaultValue === 0;
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-    setValue(event.currentTarget.value);
+    onChange(event.currentTarget.value);
   }
 
   return (
     <div className="border-2 border-slate-500">
-      <input type="text" maxLength={1} value={value} onChange={handleChange} />
+      <input
+        type="text"
+        maxLength={1}
+        value={isEditable ? inputValue : defaultValue}
+        readOnly={!isEditable}
+        onChange={handleChange}
+      />
     </div>
   );
 };
