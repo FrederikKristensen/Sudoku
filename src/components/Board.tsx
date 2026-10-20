@@ -51,7 +51,7 @@ const Board = () => {
                   return (
                     <td key={cIdx} className="nth-3:border-r nth-6:border-r">
                       <input
-                        className="w-15 h-12 border border-gray-500 hover:bg-blue-100"
+                        className="w-15 h-12 border border-gray-500 hover:bg-blue-100 focus:bg-blue-300 focus:outline-none"
                         type="text"
                         maxLength={1}
                         value={cell === null ? '' : cell}
