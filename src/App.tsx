@@ -3,9 +3,11 @@ import Board from './components/Board';
 
 function App() {
   return (
-    <>
-      <Board />
-    </>
+    <main className="min-h-screen bg-gray-400">
+      <div className="px-5 py-7">
+        <Board />
+      </div>
+    </main>
   );
 }
 

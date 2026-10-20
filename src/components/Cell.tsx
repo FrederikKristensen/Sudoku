@@ -12,13 +12,14 @@ const Cell = ({ defaultValue, inputValue, onChange }: CellProps) => {
   }
 
   return (
-    <div className="border-2 border-slate-500">
+    <div className="border border-slate-500">
       <input
         type="text"
         maxLength={1}
         value={isEditable ? inputValue : defaultValue}
         readOnly={!isEditable}
         onChange={handleChange}
+        className="focus:outline-none focus:bg-cyan-500/30"
       />
     </div>
   );
