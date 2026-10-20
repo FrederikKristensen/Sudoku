@@ -40,7 +40,7 @@ const Board = () => {
   // :border-r-2
 
   return (
-    <div className="bg-gray-300">
+    <div className="bg-gray-200 p-3 rounded-xl text-align-center">
       <table className="border-2 border-slate-600">
         <tbody>
           {Grid.map((row, rIdx) => {
@@ -51,7 +51,7 @@ const Board = () => {
                   return (
                     <td key={cIdx} className="nth-3:border-r nth-6:border-r">
                       <input
-                        className="w-10 border border-gray-500"
+                        className="w-15 h-12 border border-gray-500 hover:bg-blue-100"
                         type="text"
                         maxLength={1}
                         value={cell === null ? '' : cell}
